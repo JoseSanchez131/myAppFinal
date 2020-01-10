@@ -45,6 +45,8 @@ export class InsertarPage implements OnInit {
   
     insertar(){
   
+      if(this.categoria == "tecnologia")
+      {
       this._productosService.setProductos({
                               nombre :this.nombre,
                               descripcion : this.descripcion,
@@ -57,9 +59,50 @@ export class InsertarPage implements OnInit {
                               // km: this.km,
                               // anio: this.anio,
                               // vehiculo:this.vehiculo,
-                              // estado:this.estado,
+                              estado:this.estado
                           });
+
+                        }
+
+      if(this.categoria == "hogar")
+        {
+          this._productosService.setProductos({
+                  nombre :this.nombre,
+                  descripcion : this.descripcion,
+                  categoria: this.categoria,
+                  precio: this.precio
+          });
+        }
+
+        if(this.categoria == "motor")
+        {
+          this._productosService.setProductos({
+                  nombre :this.nombre,
+                  descripcion : this.descripcion,
+                  categoria: this.categoria,
+                  precio: this.precio,
+                  km: this.km,
+                  anio: this.anio,
+                  vehiculo:this.vehiculo
+          });
+        }
+
+        if(this.categoria == "inmobiliaria")
+        {
+          this._productosService.setProductos({
+                  nombre :this.nombre,
+                  descripcion : this.descripcion,
+                  categoria: this.categoria,
+                  precio: this.precio,
+                  metros: this.metros,
+                  banios: this.banios,
+                  habitaciones: this.habitaciones,
+                  localidad: this.localidad,
+          });
+        }
   
+
+                          
                           //console.log("Se ha insertado un elemento")
                           this.presentToast();
     }
