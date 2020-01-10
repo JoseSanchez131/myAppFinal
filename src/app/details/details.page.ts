@@ -24,7 +24,7 @@ export class DetailsPage implements OnInit {
     console.log("He recibido: " +this.nombre)
     //this._productoService.getProductos();
 
-    let res1=this._productoService.getProducto(this.nombre)
+   /* let res1=this._productoService.getProducto(this.nombre)
     this.precio=+this._productoService.getProducto(this.nombre)
     this.precio=res1.precio
     console.log("El precio es: "+ res1.precio)
@@ -35,7 +35,7 @@ export class DetailsPage implements OnInit {
     this.categoria = res1.categoria
     console.log("Categoria: "+ this.categoria)
     
-  
+  */
   }
 
 }
