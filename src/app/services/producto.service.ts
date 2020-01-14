@@ -38,10 +38,11 @@ export class ProductoService{
        
       }
 
-    /*getProductos(): IProducto[]{
-        return this.productos;
+    getProductos(): firebase.database.Reference{
+        let ref = this._db.database.ref("productos");
+        return ref;
     }
-    */
+    
 
     /*getProducto(nombre:string) : IProducto{
 

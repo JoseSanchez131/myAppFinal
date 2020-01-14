@@ -101,7 +101,7 @@ export class InsertarPage implements OnInit {
           });
         }
   
-
+                    
                           
                           //console.log("Se ha insertado un elemento")
                           this.presentToast();
