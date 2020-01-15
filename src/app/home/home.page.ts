@@ -25,6 +25,7 @@ anio: number;
 vehiculo: string;
 estado:string;
 
+productos: (IProducto|ITecnologia|IInmobiliaria| IMotor) [] = [] ;
 
   constructor( private _toastCtrl : ToastController, private _productosService :ProductoService) {}
 
@@ -33,8 +34,8 @@ estado:string;
     
     ref.on("value", snapshot => {
       snapshot.forEach(child =>{
-        //let value = child.val();
-        //this._productosService.setProductos(value);
+        let value = child.val();
+        this.productos.push(value);
         console.log("he encontrado: " +child.val().nombre)
       })
     })

@@ -25,13 +25,22 @@ export class InsertarPage implements OnInit {
   
   
   
-  productos: (IProducto|ITecnologia|IInmobiliaria| IMotor) ;
+  productos: (IProducto|ITecnologia|IInmobiliaria| IMotor) [] = [] ;
+
   
   
     constructor( private _toastCtrl : ToastController, private _productosService :ProductoService) {}
   
     ngOnInit(){
-      //this.productos = this._productosService.getProductos();
+      let ref = this._productosService.getProductos();
+      
+      ref.on("value", snapshot => {
+        snapshot.forEach(child =>{
+          let value = child.val();
+          this.productos.push(value);
+          console.log("he encontrado: " +child.val().nombre)
+        })
+      })
     }
   
     async presentToast() {
